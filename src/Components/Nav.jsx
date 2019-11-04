@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import '../css/Nav.css';
 
 class Nav extends Component {
   render() {
     return (
-      <div>
+      <div id="nav">
         <form action="">
           Sort By
           <select name="" id="">

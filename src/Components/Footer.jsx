@@ -1,8 +1,9 @@
 import React from 'react';
+import '../css/Footer.css';
 
 const Footer = () => {
   return (
-    <div>
+    <div id="footer">
       <span class="copyright">
         © {new Date().getFullYear()} Benjamin Rutledge
       </span>
