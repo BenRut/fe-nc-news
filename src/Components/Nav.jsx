@@ -4,21 +4,29 @@ import * as api from '../utils/api';
 
 class Nav extends Component {
   state = {
-    topics: []
+    topics: [],
+    isLoading: false
   };
-  // componentDidMount() {
-  //   api.fetchTopics().then(topics => {
-  //     console.log(topics);
-
-  //     this.setState({ topics });
-  //   });
-  // }
+  componentDidMount() {
+    api.fetchTopics().then(
+      topics => {
+        this.setState({ topics });
+      },
+      () => {
+        console.log(this.state.topics);
+      }
+    );
+  }
   render() {
     return (
       <div id="nav">
-        {this.state.topics.map(topic => {
-          return topic;
-        })}
+        {!this.state.isLoading && (
+          <>
+            {this.state.topics.map(topic => {
+              return <h3>{topic.slug}</h3>;
+            })}
+          </>
+        )}
       </div>
     );
   }
