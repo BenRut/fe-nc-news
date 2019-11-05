@@ -2,7 +2,13 @@
   margin: 10px;
   border: solid purple 1px;
 }
+
+.article-card:hover {
+  cursor: pointer;
+}
+
 .card-body {
+  display: inline-block;
   text-align: left;
   height: 4em;
   border: solid brown 1px;

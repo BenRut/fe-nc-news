@@ -8,7 +8,8 @@ import '../css/ArticleCard.css';
 
 class ArticleList extends Component {
   state = {
-    articles: []
+    articles: [],
+    isLoading: true
   };
   componentDidMount() {
     api.fetchAllArticles().then(articles => {
