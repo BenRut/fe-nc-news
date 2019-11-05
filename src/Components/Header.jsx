@@ -5,14 +5,19 @@ class Header extends Component {
   render() {
     return (
       <div id="header">
-        <h1>
-          <span className="tags">&lt;</span>NC News
-          <span className="tags">/&gt;</span>
+        <div>
+          <h1>
+            <span className="tags">&lt;</span>NC News
+            <span className="tags">/&gt;</span>{' '}
+          </h1>
+        </div>
+        <div>
           <form action="">
             {' '}
             <input placeholder="Search" /> <button>Submit</button>
           </form>
-        </h1>
+        </div>
+        <div></div>
       </div>
     );
   }

@@ -2,6 +2,13 @@
   margin: 10px;
   border: solid purple 1px;
 }
+.card-body {
+  text-align: left;
+  height: 4em;
+  border: solid brown 1px;
+  margin: 10px;
+}
+
 a {
   text-decoration: none;
   color: black;
