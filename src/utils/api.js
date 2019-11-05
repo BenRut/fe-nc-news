@@ -1,8 +1,12 @@
 const axios = require('axios');
 
-export const fetchAllArticles = () => {
+export const fetchArticles = topic => {
   return axios
-    .get(`https://ben-rut-nc-news.herokuapp.com/api/articles`)
+    .get(`https://ben-rut-nc-news.herokuapp.com/api/articles`, {
+      params: {
+        topic: topic
+      }
+    })
     .then(({ data: { articles } }) => {
       return articles;
     });
@@ -23,13 +27,5 @@ export const fetchSingleArticle = article_id => {
     .get(`https://ben-rut-nc-news.herokuapp.com/api/articles/${article_id}`)
     .then(({ data: { article } }) => {
       return article;
-    });
-};
-
-export const fetchArticlesByTopic = slug => {
-  return axios
-    .get(`https://ben-rut-nc-news.herokuapp.com/api/articles/?topic=${slug}`)
-    .then(({ data: { articles } }) => {
-      return articles;
     });
 };
