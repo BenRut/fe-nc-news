@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
 import * as api from '../utils/api';
-import './css/Loader.css';
+import { Link } from '@reach/router';
 import ArticleCard from './ArticleCard';
 import Loader from './Loader';
 import '../css/ArticleList.css';
+import '../css/ArticleCard.css';
 
 class ArticleList extends Component {
   state = {
-    articles: [],
-    isLoading: true
+    articles: []
   };
-  // componentDidMount() {
-  //   api.fetchArticles();
-  // }
+  componentDidMount() {
+    api.fetchAllArticles().then(articles => {
+      this.setState({ articles, isLoading: false });
+    });
+  }
   render() {
     return (
       <div id="article-list">
-        {this.state.isLoading && <Loader id="loader" />}
+        <div>sorting filters</div>
+        {this.state.isLoading && <Loader />}
         {!this.state.isLoading && (
           <>
             {this.state.articles.map(article => {
-              return <ArticleCard />;
+              return (
+                <Link to={`/articles/${article.article_id}`}>
+                  <ArticleCard key={article.article_id} article={article} />
+                </Link>
+              );
             })}
           </>
         )}

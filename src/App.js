@@ -13,11 +13,13 @@ function App() {
     <div className="App">
       <Header id="header" />
       <Nav id="nav" />
-      <Topics />
-      <Router>
-        <ArticleList id="article-list" path="/" />
-        <SingleArticle className="article" path="/articles/:article_id" />
-      </Router>
+      <div id="main">
+        <Router>
+          <ArticleList id="article-list" path="/" />
+          <SingleArticle className="article" path="/articles/:article_id" />
+        </Router>
+      </div>
+
       <Footer id="footer" />
     </div>
   );

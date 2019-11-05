@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import '../css/ArticleCard.css';
 
-class ArticleCard extends Component {
-  render() {
-    return <div></div>;
-  }
-}
+const ArticleCard = props => {
+  return (
+    <div className="article-card">
+      <h3>{props.article.title}</h3>
+    </div>
+  );
+};
 
 export default ArticleCard;

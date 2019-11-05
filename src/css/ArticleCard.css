@@ -1,0 +1,8 @@
+.article-card {
+  margin: 10px;
+  border: solid purple 1px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
