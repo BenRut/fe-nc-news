@@ -3,6 +3,7 @@ import * as api from '../utils/api';
 import Loader from '../Components/Loader';
 import '../css/SingleArticle.css';
 import Voter from '../Components/Voter';
+import CommentList from '../Components/CommentList';
 
 class SingleArticle extends Component {
   state = {
@@ -25,9 +26,10 @@ class SingleArticle extends Component {
             <div className="article-footer">
               <Voter article={this.state.article} />
               <div>Comments: {this.state.article.comment_count}</div>
-              {this.state.article.comments.map(comment => {
-                return <div></div>;
-              })}
+              <CommentList
+                article_id={this.state.article.article_id}
+                comments={this.state.comments}
+              />
             </div>
           </div>
         )}

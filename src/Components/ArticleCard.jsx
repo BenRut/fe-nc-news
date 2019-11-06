@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/ArticleCard.css';
 import { Link } from '@reach/router';
 import Voter from '../Components/Voter';
+import CommentList from '../Components/CommentList';
 
 const ArticleCard = props => {
   return (
@@ -18,6 +19,9 @@ const ArticleCard = props => {
       <div className="card-footer">
         <Voter article={props.article} />
         <div>Comments: {props.article.comment_count}</div>
+      </div>
+      <div>
+        <CommentList article_id={props.article.article_id} />
       </div>
     </div>
   );

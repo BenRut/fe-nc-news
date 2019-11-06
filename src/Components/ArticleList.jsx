@@ -68,14 +68,7 @@ class ArticleList extends Component {
         {!this.state.isLoading && (
           <>
             {this.state.articles.map(article => {
-              return (
-                // <Link
-                //   key={article.article_id}
-                //   to={`/articles/${article.article_id}`}
-                // >
-                <ArticleCard key={article.article_id} article={article} />
-                // {/* </Link> */}
-              );
+              return <ArticleCard key={article.article_id} article={article} />;
             })}
           </>
         )}
