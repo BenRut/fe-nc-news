@@ -24,7 +24,11 @@ class SingleArticle extends Component {
             <h1>{this.state.article.title}</h1>
             <div className="article-body">{this.state.article.body}</div>
             <div className="article-footer">
-              <Voter article={this.state.article} />
+              <Voter
+                id={this.state.article.article_id}
+                endpoint="articles"
+                votes={this.state.article.votes}
+              />
               <div>Comments: {this.state.article.comment_count}</div>
               <CommentList
                 article_id={this.state.article.article_id}

@@ -17,7 +17,11 @@ const ArticleCard = props => {
         </div>
       </Link>
       <div className="card-footer">
-        <Voter article={props.article} />
+        <Voter
+          id={props.article.article_id}
+          endpoint="articles"
+          votes={props.article.votes}
+        />
         <div>Comments: {props.article.comment_count}</div>
       </div>
       <div>

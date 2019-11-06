@@ -7,9 +7,7 @@ class Voter extends Component {
   };
   handleVote = e => {
     const newVotes = e.target.name;
-    // e.stopPropagation();
-    // e.preventDefault();
-    api.updateVotes(this.props.article.article_id, newVotes);
+    api.updateVotes(this.props.id, newVotes, this.props.endpoint);
     this.setState(currentState => {
       return { optimisticVotes: currentState.optimisticVotes + +newVotes };
     });
@@ -24,7 +22,7 @@ class Voter extends Component {
         >
           Up
         </button>
-        <div>{this.props.article.votes + this.state.optimisticVotes}</div>
+        <div>{this.props.votes + this.state.optimisticVotes}</div>
         <button
           onClick={this.handleVote}
           name="-1"

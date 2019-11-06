@@ -30,9 +30,9 @@ export const fetchSingleArticle = article_id => {
     });
 };
 
-export const updateVotes = (article_id, inc_votes) => {
+export const updateVotes = (id, inc_votes, endpoint) => {
   return axios.patch(
-    `https://ben-rut-nc-news.herokuapp.com/api/articles/${article_id}`,
+    `https://ben-rut-nc-news.herokuapp.com/api/${endpoint}/${id}`,
     { inc_votes }
   );
 };
