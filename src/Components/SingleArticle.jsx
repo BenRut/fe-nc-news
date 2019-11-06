@@ -25,6 +25,9 @@ class SingleArticle extends Component {
             <div className="article-footer">
               <Voter article={this.state.article} />
               <div>Comments: {this.state.article.comment_count}</div>
+              {this.state.article.comments.map(comment => {
+                return <div></div>;
+              })}
             </div>
           </div>
         )}

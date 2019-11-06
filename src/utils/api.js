@@ -1,10 +1,12 @@
 const axios = require('axios');
 
-export const fetchArticles = topic => {
+export const fetchArticles = (topic, sort_by, order) => {
   return axios
     .get(`https://ben-rut-nc-news.herokuapp.com/api/articles`, {
       params: {
-        topic: topic
+        topic,
+        sort_by,
+        order
       }
     })
     .then(({ data: { articles } }) => {
@@ -29,6 +31,7 @@ export const fetchSingleArticle = article_id => {
 };
 
 export const updateVotes = (article_id, inc_votes) => {
+  console.log('inside update votes');
   return axios.patch(
     `https://ben-rut-nc-news.herokuapp.com/api/articles/${article_id}`,
     { inc_votes }

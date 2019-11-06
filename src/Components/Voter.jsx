@@ -6,9 +6,9 @@ class Voter extends Component {
     optimisticVotes: 0
   };
   handleVote = e => {
-    console.log(e.target.name);
-
     const newVotes = e.target.name;
+    // e.stopPropagation();
+    // e.preventDefault();
     api.updateVotes(this.props.article.article_id, newVotes);
     this.setState(currentState => {
       return { optimisticVotes: currentState.optimisticVotes + +newVotes };

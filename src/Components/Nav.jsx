@@ -9,14 +9,9 @@ class Nav extends Component {
     isLoading: false
   };
   componentDidMount() {
-    api.fetchTopics().then(
-      topics => {
-        this.setState({ topics });
-      },
-      () => {
-        console.log(this.state.topics);
-      }
-    );
+    api.fetchTopics().then(topics => {
+      this.setState({ topics });
+    });
   }
 
   render() {
@@ -27,11 +22,10 @@ class Nav extends Component {
             <Link to="/">
               <button className="topic-button">all articles</button>
             </Link>
-
             {this.state.topics.map(topic => {
               return (
-                <Link key={topic.slug} to={`/articles/${topic.slug}`}>
-                  <button className="topic-button">{topic.slug}</button>
+                <Link key={topic.slug} to={`/${topic.slug}/articles`}>
+                  <button className="topic-button">#{topic.slug}</button>
                 </Link>
               );
             })}
