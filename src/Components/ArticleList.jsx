@@ -18,16 +18,14 @@ class ArticleList extends Component {
     });
   }
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.topic !== prevProps.topic) {
-      api.fetchArticles(this.props.topic).then(articles => {
-        this.setState({ articles, isFiltered: true });
-      });
-    }
+    // if (this.props.topic !== prevProps.topic) {
+    api.fetchArticles(this.props.topic).then(articles => {
+      this.setState({ articles, isFiltered: true });
+    });
+    // }
   }
 
   render() {
-    console.log(this.props.topic);
-
     return (
       <div id="article-list">
         <div>sorting filters</div>

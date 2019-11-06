@@ -1,3 +1,4 @@
 #footer {
+  grid-area: 'Footer';
   border: solid blue 1px;
 }

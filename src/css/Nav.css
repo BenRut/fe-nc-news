@@ -1,4 +1,5 @@
 #nav {
+  grid-area: 'Nav';
   padding: 25px;
   border: solid orange 1px;
   display: flex;

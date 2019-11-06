@@ -1,11 +1,10 @@
-.App {
-  display: grid;
-  grid-template-rows: 100px 50px 1fr 50px;
-  width: 100vw;
-  height: 100vh;
-}
+/* .App {
+  /* grid-template-areas: 'Header' 'Nav' 'Main' 'Footer'; */
+/* grid-template-rows: 100px 50px 1fr 50px; */
+/* } */
 
 #main {
+  grid-area: 'Main';
   overflow-y: scroll;
 }
 
@@ -35,3 +34,15 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* @media (min-width: 768px) { */
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    'Header' 'Header'
+    'Main' 'Nav'
+    'Footer' 'Footer';
+}
+/* } */

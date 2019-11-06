@@ -16,7 +16,7 @@ function App() {
       <div id="main">
         <Router>
           <ArticleList id="article-list" path="/" />
-          <ArticleList id="article-list" path="/articles/:topic" />
+          <ArticleList id="article-list" path="/:topic/articles" />
           <SingleArticle className="article" path="/articles/:article_id" />
         </Router>
       </div>
