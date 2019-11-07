@@ -26,7 +26,9 @@ class Voter extends Component {
         >
           Up
         </button>
-        <div>{this.props.votes + this.state.optimisticVotes}</div>
+        <div className="votes">
+          {this.props.votes + this.state.optimisticVotes}
+        </div>
         <button
           onClick={this.handleVote}
           name="-1"

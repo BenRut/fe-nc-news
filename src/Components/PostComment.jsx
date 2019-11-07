@@ -4,17 +4,27 @@ import '../css/PostComment.css';
 
 class PostComment extends Component {
   state = {
-    input: ''
+    input: '',
+    showAlert: false
   };
   handleSubmit = e => {
     e.preventDefault();
-    api
-      .postComment(this.props.article_id, this.props.username, this.state.input)
-      .then(newComment => {
-        this.props.addComment(newComment);
-      });
-    this.setState({ input: '' });
+    if (this.state.input.length === 0) {
+      this.setState({ showAlert: true });
+    } else {
+      api
+        .postComment(
+          this.props.article_id,
+          this.props.username,
+          this.state.input
+        )
+        .then(newComment => {
+          this.props.addComment(newComment);
+        });
+      this.setState({ input: '', showAlert: false });
+    }
   };
+
   handleInput = value => {
     this.setState({ input: value });
   };
@@ -29,6 +39,7 @@ class PostComment extends Component {
             type="text"
             value={this.state.input}
           />
+          {this.state.showAlert && <p>Can't submit empty comment</p>}
         </form>
       </div>
     );

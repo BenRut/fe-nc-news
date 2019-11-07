@@ -26,7 +26,7 @@
   display: inline-block;
   text-align: left;
   height: 4em;
-  background-image: linear-gradient(white, darkgray);
+  background-image: linear-gradient(white, #e5e5e5);
   color: #565656;
   padding: 10px;
   border-radius: 10px 10px 0px 0px;
@@ -38,6 +38,10 @@
   justify-content: flex-start;
   background-color: white;
   padding: 10px;
+  align-items: center;
+}
+.card-footer button {
+  margin: 12px;
 }
 
 .votes {

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import * as api from '../utils/api';
-
 import ArticleCard from './ArticleCard';
 import Loader from './Loader';
-
+import ErrorPage from '../Components/ErrorPage';
 import '../css/ArticleList.css';
 import '../css/ArticleCard.css';
 
@@ -13,13 +12,19 @@ class ArticleList extends Component {
     isLoading: true,
     isFiltered: false,
     sortBy: 'created_at',
-    order: 'desc'
+    order: '',
+    err: null
   };
   componentDidMount() {
     console.log('mounting');
-    api.fetchArticles().then(articles => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .fetchArticles()
+      .then(articles => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err });
+      });
   }
   componentDidUpdate(prevProps, prevState) {
     console.log('updating');
@@ -32,6 +37,9 @@ class ArticleList extends Component {
         .fetchArticles(this.props.topic, this.state.sortBy, this.state.order)
         .then(articles => {
           this.setState({ articles, isFiltered: true });
+        })
+        .catch(err => {
+          console.log(err);
         });
     }
   }
@@ -44,11 +52,13 @@ class ArticleList extends Component {
   };
 
   render() {
+    const { err } = this.state;
+    if (err) return <ErrorPage />;
     return (
       <div id="article-list">
-        <div>
+        <div className="sort-by">
           Sort by:
-          <select onChange={this.handleSortBy}>
+          <select className="select-css" onChange={this.handleSortBy}>
             <option value="created_at">date</option>
             <option value="title">title</option>
             <option value="author">author</option>
@@ -56,7 +66,11 @@ class ArticleList extends Component {
             <option value="comment_count">most talked about</option>
           </select>
           Order:
-          <select defaultValue="asc" onChange={this.handleOrder}>
+          <select
+            className="select-css"
+            defaultValue="asc"
+            onChange={this.handleOrder}
+          >
             <option value="asc">ascending</option>
             <option value="desc">descending</option>
           </select>

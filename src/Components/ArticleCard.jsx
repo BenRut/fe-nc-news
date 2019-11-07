@@ -10,7 +10,13 @@ const ArticleCard = props => {
       <div className="article-card-top">
         <div className="card-header">
           <p>@{props.article.author}</p>
-          <p>{props.article.created_at.slice(0, 10)}</p>
+          <p>
+            {props.article.created_at
+              .slice(0, 10)
+              .split('-')
+              .reverse()
+              .join('/')}
+          </p>
         </div>
         <Link to={`/articles/${props.article.article_id}`}>
           <h3>{props.article.title}</h3>
@@ -30,8 +36,10 @@ const ArticleCard = props => {
           />
         )}
 
-        <div>Comments: {props.article.comment_count}</div>
-        <div className="topic-button">#{props.article.topic}</div>
+        <p>Comments: {props.article.comment_count}</p>
+        <Link key={props.article.topic} to={`/${props.article.topic}/articles`}>
+          <button className="topic-button">#{props.article.topic}</button>
+        </Link>
       </div>
       <div>
         <CommentList

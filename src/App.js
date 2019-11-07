@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import Header from './Components/Header';
 import Nav from './Components/Nav';
+import ErrorPage from './Components/ErrorPage';
 
 import { Router } from '@reach/router';
 import ArticleList from './Components/ArticleList';
@@ -34,6 +35,7 @@ class App extends Component {
               className="article"
               path="/articles/:article_id"
             />
+            <ErrorPage default />
           </Router>
         </div>
 

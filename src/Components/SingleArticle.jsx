@@ -4,18 +4,27 @@ import Loader from '../Components/Loader';
 import '../css/SingleArticle.css';
 import Voter from '../Components/Voter';
 import CommentList from '../Components/CommentList';
+import ErrorPage from '../Components/ErrorPage';
 
 class SingleArticle extends Component {
   state = {
     article: {},
-    isLoading: true
+    isLoading: true,
+    err: null
   };
   componentDidMount() {
-    api.fetchSingleArticle(this.props.article_id).then(article => {
-      this.setState({ article, isLoading: false });
-    });
+    api
+      .fetchSingleArticle(this.props.article_id)
+      .then(article => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err: err.response.data.msg });
+      });
   }
   render() {
+    const { err } = this.state;
+    if (err) return <ErrorPage err={err} />;
     return (
       <div className="single-article">
         {this.state.isLoading && <Loader />}

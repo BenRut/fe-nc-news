@@ -8,12 +8,18 @@ import PostComment from '../Components/PostComment';
 class CommentList extends Component {
   state = {
     comments: [],
-    isLoading: true
+    isLoading: true,
+    err: null
   };
   componentDidMount() {
-    api.fetchCommentsByArticleId(this.props.article_id).then(comments => {
-      this.setState({ comments, isLoading: false });
-    });
+    api
+      .fetchCommentsByArticleId(this.props.article_id)
+      .then(comments => {
+        this.setState({ comments, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err: err.response.data.msg });
+      });
   }
   addComment = newComment => {
     this.setState(currentState => {

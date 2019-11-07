@@ -14,8 +14,12 @@ const CommentCard = props => {
           <span className="user-comment">@{props.comment.author}</span>
         )}
         <span>
-          {props.comment.created_at.slice(0, 10)} at{' '}
-          {props.comment.created_at.slice(11, 16)}
+          {props.comment.created_at
+            .slice(0, 10)
+            .split('-')
+            .reverse()
+            .join('/')}{' '}
+          at {props.comment.created_at.slice(11, 16)}
         </span>
       </div>
       <p>{props.comment.body}</p>
