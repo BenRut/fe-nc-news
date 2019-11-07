@@ -2,3 +2,7 @@
   padding: 10px;
   text-align: left;
 }
+
+.user-comment {
+  color: var(--accent-color);
+}

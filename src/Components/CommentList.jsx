@@ -22,6 +22,11 @@ class CommentList extends Component {
       };
     });
   };
+  getArticleComments = () => {
+    api.fetchCommentsByArticleId(this.props.article_id).then(comments => {
+      this.setState({ comments, isLoading: false });
+    });
+  };
   render() {
     return (
       <div className="comment-list">
@@ -34,6 +39,7 @@ class CommentList extends Component {
                   username={this.props.username}
                   key={comment.comment_id}
                   comment={comment}
+                  getArticleComments={this.getArticleComments}
                 />
               );
             })}

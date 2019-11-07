@@ -53,3 +53,9 @@ export const postComment = (article_id, username, body) => {
     { username, body }
   );
 };
+
+export const deleteComment = comment_id => {
+  return axios.delete(
+    `https://ben-rut-nc-news.herokuapp.com/api/comments/${comment_id}`
+  );
+};

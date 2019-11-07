@@ -6,6 +6,16 @@ import DeleteComment from '../Components/DeleteComment';
 const CommentCard = props => {
   return (
     <div className="comment-card">
+      <div className="comment-header">
+        {props.username !== props.comment.author && (
+          <p>@{props.comment.author}</p>
+        )}
+        {props.username === props.comment.author && (
+          <p>
+            <span className="user-comment">@{props.comment.author}</span>
+          </p>
+        )}
+      </div>
       <p>{props.comment.body}</p>
       <div className="comment-footer">
         {props.username !== props.comment.author && (
@@ -15,7 +25,12 @@ const CommentCard = props => {
             votes={props.comment.votes}
           />
         )}
-        {props.username === props.comment.author && <DeleteComment />}
+        {props.username === props.comment.author && (
+          <DeleteComment
+            getArticleComments={props.getArticleComments}
+            comment_id={props.comment.comment_id}
+          />
+        )}
       </div>
       <hr />
     </div>
