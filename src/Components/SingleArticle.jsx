@@ -33,6 +33,7 @@ class SingleArticle extends Component {
               <CommentList
                 article_id={this.state.article.article_id}
                 comments={this.state.comments}
+                username={this.props.username}
               />
             </div>
           </div>

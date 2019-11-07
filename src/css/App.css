@@ -3,9 +3,20 @@
 /* grid-template-rows: 100px 50px 1fr 50px; */
 /* } */
 
+:root {
+  --accent-color: #ba1f31;
+  --white: #fff;
+  --grey: #202829;
+  --lightgrey: #ededed;
+}
+
 #main {
   grid-area: 'Main';
   overflow-y: scroll;
+}
+
+.body {
+  font-family: 'Gotham Book';
 }
 
 /* .main {
@@ -46,3 +57,16 @@
     'Footer' 'Footer';
 }
 /* } */
+@font-face {
+  font-family: 'Gotham Book';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Gotham Book'), url('../fonts/GOTHAMBOOK.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gotham Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Gotham Bold'), url('../fonts/GOTHAMBOLD.woff') format('woff');
+}

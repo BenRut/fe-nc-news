@@ -11,12 +11,7 @@ class Header extends Component {
             <span className="tags">/&gt;</span>{' '}
           </h1>
         </div>
-        <div>
-          <form action="">
-            {' '}
-            <input placeholder="Search" /> <button>Submit</button>
-          </form>
-        </div>
+        <div></div>
         <div></div>
       </div>
     );

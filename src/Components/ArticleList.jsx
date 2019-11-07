@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../utils/api';
-import { Link } from '@reach/router';
+
 import ArticleCard from './ArticleCard';
 import Loader from './Loader';
 
@@ -17,7 +17,6 @@ class ArticleList extends Component {
   };
   componentDidMount() {
     console.log('mounting');
-
     api.fetchArticles().then(articles => {
       this.setState({ articles, isLoading: false });
     });
@@ -41,8 +40,6 @@ class ArticleList extends Component {
   };
 
   handleOrder = e => {
-    console.log(e.target.value);
-
     this.setState({ order: e.target.value });
   };
 
@@ -59,7 +56,7 @@ class ArticleList extends Component {
             <option value="comment_count">most talked about</option>
           </select>
           Order:
-          <select onChange={this.handleOrder}>
+          <select defaultValue="asc" onChange={this.handleOrder}>
             <option value="asc">ascending</option>
             <option value="desc">descending</option>
           </select>
@@ -68,7 +65,13 @@ class ArticleList extends Component {
         {!this.state.isLoading && (
           <>
             {this.state.articles.map(article => {
-              return <ArticleCard key={article.article_id} article={article} />;
+              return (
+                <ArticleCard
+                  username={this.props.username}
+                  key={article.article_id}
+                  article={article}
+                />
+              );
             })}
           </>
         )}

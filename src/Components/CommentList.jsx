@@ -3,6 +3,7 @@ import * as api from '../utils/api';
 import Loader from '../Components/Loader';
 import CommentCard from '../Components/CommentCard';
 import '../css/CommentList.css';
+import PostComment from '../Components/PostComment';
 
 class CommentList extends Component {
   state = {
@@ -14,6 +15,13 @@ class CommentList extends Component {
       this.setState({ comments, isLoading: false });
     });
   }
+  addComment = newComment => {
+    this.setState(currentState => {
+      return {
+        comments: [newComment.data.comment, ...currentState.comments]
+      };
+    });
+  };
   render() {
     return (
       <div className="comment-list">
@@ -21,9 +29,19 @@ class CommentList extends Component {
         {!this.state.isLoading && (
           <>
             {this.state.comments.map(comment => {
-              return <CommentCard key={comment.comment_id} comment={comment} />;
+              return (
+                <CommentCard
+                  username={this.props.username}
+                  key={comment.comment_id}
+                  comment={comment}
+                />
+              );
             })}
-            <div className="comment-list-footer"></div>
+            <PostComment
+              username={this.props.username}
+              article_id={this.props.article_id}
+              addComment={this.addComment}
+            />
           </>
         )}
       </div>

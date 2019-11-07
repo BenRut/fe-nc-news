@@ -1,8 +1,17 @@
 #nav {
   grid-area: 'Nav';
   padding: 25px;
-  border: solid orange 1px;
+  background-color: var(--lightgrey);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 8px -2px gray;
+}
+.topic-button {
+  border-radius: 34px;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 7px;
+  box-shadow: 0 4px 8px -2px gray;
 }

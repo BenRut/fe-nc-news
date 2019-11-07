@@ -46,3 +46,10 @@ export const fetchCommentsByArticleId = article_id => {
       return comments;
     });
 };
+
+export const postComment = (article_id, username, body) => {
+  return axios.post(
+    `https://ben-rut-nc-news.herokuapp.com/api/articles/${article_id}/comments`,
+    { username, body }
+  );
+};

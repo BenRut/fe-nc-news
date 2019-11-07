@@ -1,0 +1,14 @@
+.post-comment {
+  height: 100%;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 0px 0px 10px 10px;
+}
+
+.comment-input {
+  padding: 24px;
+  width: 80%;
+  margin: 20px;
+  border: none;
+  outline: none;
+}

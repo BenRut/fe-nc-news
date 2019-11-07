@@ -14,8 +14,8 @@ class ArticleSorter extends Component {
         </select>
         Order:
         <select>
-          <option value="asc">ascending</option>
           <option value="desc">descending</option>
+          <option value="asc">ascending</option>
         </select>
       </div>
     );

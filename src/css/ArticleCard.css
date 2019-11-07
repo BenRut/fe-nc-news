@@ -1,23 +1,43 @@
 .article-card {
-  margin: 10px;
-  border: solid purple 1px;
+  margin: 20px;
+  box-shadow: 0 4px 20px 0px gray;
+  background-color: var(--lightgrey);
+  border-radius: 10px;
 }
 
-.article-card:hover {
-  cursor: pointer;
+.article-card-top {
+  background-color: var(--accent-color);
+  border-radius: 10px 10px 0px 0px;
+  padding: 30px 30px 0px 30px;
+}
+
+.card-header {
+  display: flex;
+  color: white;
+}
+.card-header p {
+  margin: 0px 30px 0px 0px;
+}
+.article-card-top a {
+  color: var(--white);
 }
 
 .card-body {
   display: inline-block;
   text-align: left;
   height: 4em;
-  border: solid brown 1px;
-  margin: 10px;
+  background-image: linear-gradient(white, darkgray);
+  color: #565656;
+  padding: 10px;
+  border-radius: 10px 10px 0px 0px;
+  margin: 10px 10px 0px 10px;
 }
 
 .card-footer {
   display: flex;
   justify-content: flex-start;
+  background-color: white;
+  padding: 10px;
 }
 
 .votes {

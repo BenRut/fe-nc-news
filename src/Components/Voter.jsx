@@ -5,12 +5,16 @@ class Voter extends Component {
   state = {
     optimisticVotes: 0
   };
+
   handleVote = e => {
     const newVotes = e.target.name;
     api.updateVotes(this.props.id, newVotes, this.props.endpoint);
-    this.setState(currentState => {
-      return { optimisticVotes: currentState.optimisticVotes + +newVotes };
-    });
+    this.setState(
+      currentState => {
+        return { optimisticVotes: currentState.optimisticVotes + +newVotes };
+      },
+      () => {}
+    );
   };
   render() {
     return (
