@@ -6,3 +6,10 @@
 .user-comment {
   color: var(--accent-color);
 }
+
+.comment-header {
+  display: flex;
+}
+.comment-header span {
+  margin: 0 20px 0 0;
+}
