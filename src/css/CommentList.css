@@ -1,2 +1,4 @@
 .comment-list {
+  position: relative;
+  z-index: 7;
 }

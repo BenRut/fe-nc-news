@@ -13,6 +13,7 @@
 #main {
   grid-area: 'Main';
   overflow-y: scroll;
+  height: 60vh;
 }
 
 .body {
@@ -51,10 +52,7 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-areas:
-    'Header' 'Header'
-    'Main' 'Nav'
-    'Footer' 'Footer';
+  grid-template-rows: ;
 }
 /* } */
 @font-face {

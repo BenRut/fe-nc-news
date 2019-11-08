@@ -8,12 +8,15 @@
 
 .article-card-top {
   background-color: var(--accent-color);
+  position: relative;
+  z-index: 8;
   border-radius: 10px 10px 0px 0px;
   padding: 30px 30px 0px 30px;
 }
 
 .card-header {
   display: flex;
+
   color: white;
 }
 .card-header p {
@@ -38,13 +41,15 @@
 }
 
 .card-footer {
+  position: relative;
+  z-index: 8;
   display: flex;
   justify-content: flex-start;
   background-color: white;
   padding: 10px;
   align-items: center;
 }
-.card-footer img {
+.card-footer input {
   width: 25px;
   margin: 15px;
 }

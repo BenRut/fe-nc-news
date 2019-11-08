@@ -3,7 +3,7 @@
   padding: 25px;
   background-color: var(--lightgrey);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   box-shadow: 0 4px 8px -2px gray;
   z-index: 10;
