@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header id="header" />
+        <Header username={this.state.username} id="header" />
         <Nav id="nav" />
         <div id="main">
           <Router>

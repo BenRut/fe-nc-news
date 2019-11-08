@@ -1,0 +1,9 @@
+.delete-comment {
+  border: none;
+  color: var(--accent-color);
+  background-color: transparent;
+}
+
+.delete-comment:hover {
+  text-decoration: underline;
+}

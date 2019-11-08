@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../utils/api';
+import '../css/DeleteComment.css';
 
 class DeleteComment extends Component {
   state = {};
@@ -9,7 +10,11 @@ class DeleteComment extends Component {
     });
   };
   render() {
-    return <button onClick={this.handleClick}>Delete comment</button>;
+    return (
+      <button className="delete-comment" onClick={this.handleClick}>
+        Delete comment
+      </button>
+    );
   }
 }
 

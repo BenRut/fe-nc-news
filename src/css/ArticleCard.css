@@ -3,6 +3,7 @@
   box-shadow: 0 4px 20px 0px gray;
   background-color: var(--lightgrey);
   border-radius: 10px;
+  z-index: 8;
 }
 
 .article-card-top {
@@ -25,12 +26,15 @@
 .card-body {
   display: inline-block;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: ;
   height: 4em;
   background-image: linear-gradient(white, #e5e5e5);
   color: #565656;
   padding: 10px;
   border-radius: 10px 10px 0px 0px;
-  margin: 10px 10px 0px 10px;
+  margin: 10px 10px -3px 10px;
 }
 
 .card-footer {
@@ -39,6 +43,10 @@
   background-color: white;
   padding: 10px;
   align-items: center;
+}
+.card-footer img {
+  width: 25px;
+  margin: 15px;
 }
 .card-footer button {
   margin: 12px;

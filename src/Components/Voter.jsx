@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import * as api from '../utils/api';
+import Up from '../icons/up.png';
+import Down from '../icons/down.png';
+import '../css/Voter.css';
+import '../css/App.css';
 
 class Voter extends Component {
   state = {
@@ -19,23 +23,24 @@ class Voter extends Component {
   render() {
     return (
       <div className="votes">
-        <button
+        <input
+          type="image"
+          src={Up}
           onClick={this.handleVote}
           name="1"
           disabled={this.state.optimisticVotes === 1}
-        >
-          Up
-        </button>
+        />
+
         <div className="votes">
           {this.props.votes + this.state.optimisticVotes}
         </div>
-        <button
+        <input
+          type="image"
+          src={Down}
           onClick={this.handleVote}
           name="-1"
           disabled={this.state.optimisticVotes === -1}
-        >
-          Down
-        </button>
+        />
       </div>
     );
   }

@@ -5,6 +5,7 @@
   text-align: center;
   color: white;
   background-color: var(--grey);
+  z-index: 10;
 }
 
 h1 {
@@ -12,6 +13,23 @@ h1 {
   font-weight: 300;
 }
 
+.user {
+  width: 20px;
+  height: 27px;
+  filter: invert(100);
+}
+
+.login {
+  margin: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
 .tags {
   color: #ba1f31;
+}
+
+.login-item {
+  margin: 10px;
 }

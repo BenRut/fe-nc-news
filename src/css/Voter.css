@@ -1,0 +1,15 @@
+.votes input {
+  width: 20px;
+  height: 25px;
+  margin: 5px;
+}
+
+.votes input:hover {
+  filter: invert(20%) sepia(78%) saturate(2056%) hue-rotate(332deg)
+    brightness(97%) contrast(105%);
+}
+
+.votes input:disabled {
+  filter: invert(82%) sepia(3%) saturate(4%) hue-rotate(1deg) brightness(89%)
+    contrast(89%);
+}

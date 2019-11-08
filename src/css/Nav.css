@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 8px -2px gray;
+  z-index: 10;
 }
 .topic-button {
   border-radius: 34px;
@@ -14,4 +15,8 @@
   color: var(--white);
   padding: 7px;
   box-shadow: 0 4px 8px -2px gray;
+}
+
+.topic-button:hover {
+  filter: brightness(85%);
 }

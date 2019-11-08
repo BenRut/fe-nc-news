@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Header.css';
+import User from '../icons/user.png';
 
 class Header extends Component {
   render() {
@@ -12,7 +13,10 @@ class Header extends Component {
           </h1>
         </div>
         <div></div>
-        <div></div>
+        <div className="login">
+          <p className="login-item">{this.props.username}</p>
+          <img className="user login-item" src={User} />
+        </div>
       </div>
     );
   }

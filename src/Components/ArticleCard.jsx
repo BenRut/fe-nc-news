@@ -3,6 +3,7 @@ import '../css/ArticleCard.css';
 import { Link } from '@reach/router';
 import Voter from '../Components/Voter';
 import CommentList from '../Components/CommentList';
+import Comments from '../icons/comments.png';
 
 const ArticleCard = props => {
   return (
@@ -35,8 +36,8 @@ const ArticleCard = props => {
             votes={props.article.votes}
           />
         )}
-
-        <p>Comments: {props.article.comment_count}</p>
+        <img src={Comments} alt="" />
+        <p> {props.article.comment_count}</p>
         <Link key={props.article.topic} to={`/${props.article.topic}/articles`}>
           <button className="topic-button">#{props.article.topic}</button>
         </Link>
