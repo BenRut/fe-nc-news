@@ -1,7 +1,7 @@
 .votes input {
   width: 20px;
   height: 25px;
-  margin: 5px;
+  margin: 12px 10px 10px 10px;
 }
 
 .votes input:hover {

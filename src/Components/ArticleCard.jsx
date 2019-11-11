@@ -5,7 +5,6 @@ import { Link } from '@reach/router';
 import Voter from '../Components/Voter';
 import CommentList from '../Components/CommentList';
 import Comments from '../icons/comments.png';
-import { Animated } from 'react-animated-css';
 
 class ArticleCard extends Component {
   state = {

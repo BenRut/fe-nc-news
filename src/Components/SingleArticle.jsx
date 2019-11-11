@@ -5,6 +5,7 @@ import '../css/SingleArticle.css';
 import Voter from '../Components/Voter';
 import CommentList from '../Components/CommentList';
 import ErrorPage from '../Components/ErrorPage';
+import Comments from '../icons/comments.png';
 
 class SingleArticle extends Component {
   state = {
@@ -33,12 +34,21 @@ class SingleArticle extends Component {
             <h1>{this.state.article.title}</h1>
             <div className="article-body">{this.state.article.body}</div>
             <div className="article-footer">
-              <Voter
-                id={this.state.article.article_id}
-                endpoint="articles"
-                votes={this.state.article.votes}
-              />
-              <div>Comments: {this.state.article.comment_count}</div>
+              <div className="single-article-voter">
+                <Voter
+                  id={this.state.article.article_id}
+                  endpoint="articles"
+                  votes={this.state.article.votes}
+                />
+              </div>
+
+              <div className="single-article-comment-count">
+                <img src={Comments} alt="" />{' '}
+                <p>{this.state.article.comment_count}</p>
+              </div>
+            </div>
+
+            <div className="single-article-comment-list">
               <CommentList
                 article_id={this.state.article.article_id}
                 comments={this.state.comments}

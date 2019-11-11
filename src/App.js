@@ -15,32 +15,35 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="App">
-        <Header username={this.state.username} id="header" />
-        <Nav id="nav" />
-        <div id="main">
-          <Router>
-            <ArticleList
-              username={this.state.username}
-              id="article-list"
-              path="/"
-            />
-            <ArticleList
-              username={this.state.username}
-              id="article-list"
-              path="/:topic/articles"
-            />
-            <SingleArticle
-              username={this.state.username}
-              className="article"
-              path="/articles/:article_id"
-            />
-            <ErrorPage default />
-          </Router>
+      <>
+        <div className="App">
+          <Header username={this.state.username} id="header" />
+          <Nav id="nav" />
+          <div id="main">
+            <Router>
+              <ArticleList
+                username={this.state.username}
+                id="article-list"
+                path="/"
+              />
+              <ArticleList
+                username={this.state.username}
+                id="article-list"
+                path="/:topic/articles"
+              />
+              <SingleArticle
+                username={this.state.username}
+                className="article"
+                path="/articles/:article_id"
+              />
+              <ErrorPage default />
+            </Router>
+          </div>
         </div>
-
-        <Footer id="footer" />
-      </div>
+        <div>
+          <Footer />
+        </div>
+      </>
     );
   }
 }

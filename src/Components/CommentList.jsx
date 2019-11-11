@@ -39,16 +39,18 @@ class CommentList extends Component {
         {this.state.isLoading && <Loader />}
         {!this.state.isLoading && (
           <>
-            {this.state.comments.map(comment => {
-              return (
-                <CommentCard
-                  username={this.props.username}
-                  key={comment.comment_id}
-                  comment={comment}
-                  getArticleComments={this.getArticleComments}
-                />
-              );
-            })}
+            {this.state.comments
+              .map(comment => {
+                return (
+                  <CommentCard
+                    username={this.props.username}
+                    key={comment.comment_id}
+                    comment={comment}
+                    getArticleComments={this.getArticleComments}
+                  />
+                );
+              })
+              .reverse()}
             <PostComment
               username={this.props.username}
               article_id={this.props.article_id}

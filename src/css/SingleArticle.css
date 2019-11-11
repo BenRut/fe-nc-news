@@ -1,7 +1,39 @@
 .single-article {
   text-align: center;
+  margin-bottom: 60px;
 }
 .article-body {
   text-align: left;
   margin: 30px;
+}
+
+.single-article-comment-list {
+  background-color: var(--lightgrey);
+}
+
+.article-footer {
+  display: flex;
+  align-items: center;
+  background-color: var(--grey);
+  color: white;
+}
+
+.article-footer img {
+  width: 25px;
+  height: 25px;
+  filter: invert(100);
+  margin: 10px;
+}
+
+.single-article-voter {
+  margin: 20px;
+}
+
+.single-article-voter input {
+  filter: invert(100);
+}
+
+.single-article-comment-count {
+  display: flex;
+  align-items: center;
 }

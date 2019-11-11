@@ -1,5 +1,4 @@
-#nav {
-  grid-area: 'Nav';
+nav {
   padding: 25px;
   background-color: var(--lightgrey);
   display: flex;
@@ -7,7 +6,9 @@
   align-items: center;
   box-shadow: 0 4px 8px -2px gray;
   z-index: 10;
+  padding: 10px;
 }
+
 .topic-button {
   border-radius: 34px;
   border: none;
@@ -15,6 +16,7 @@
   color: var(--white);
   padding: 7px;
   box-shadow: 0 4px 8px -2px gray;
+  cursor: pointer;
 }
 
 .topic-button:hover {

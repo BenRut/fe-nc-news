@@ -1,7 +1,7 @@
 #header {
   grid-area: 'Header';
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   text-align: center;
   color: white;
   background-color: var(--grey);
@@ -11,6 +11,16 @@
 h1 {
   font-family: 'Gotham Bold';
   font-weight: 300;
+  margin: 25px;
+}
+
+#logo {
+  height: 70px;
+  margin: 20px;
+}
+
+#logo-div {
+  display: flex;
 }
 
 .user {

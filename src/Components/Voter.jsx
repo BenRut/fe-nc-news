@@ -29,17 +29,18 @@ class Voter extends Component {
           onClick={this.handleVote}
           name="1"
           disabled={this.state.optimisticVotes === 1}
+          alt=""
         />
 
-        <div className="votes">
-          {this.props.votes + this.state.optimisticVotes}
-        </div>
+        <p className="votes">{this.props.votes + this.state.optimisticVotes}</p>
+
         <input
           type="image"
           src={Down}
           onClick={this.handleVote}
           name="-1"
           disabled={this.state.optimisticVotes === -1}
+          alt=""
         />
       </div>
     );

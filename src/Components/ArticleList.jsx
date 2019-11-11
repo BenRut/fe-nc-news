@@ -16,7 +16,6 @@ class ArticleList extends Component {
     err: null
   };
   componentDidMount() {
-    console.log('mounting');
     api
       .fetchArticles()
       .then(articles => {
@@ -27,7 +26,6 @@ class ArticleList extends Component {
       });
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log('updating');
     if (
       this.props.topic !== prevProps.topic ||
       this.state.sortBy !== prevState.sortBy ||
@@ -37,9 +35,6 @@ class ArticleList extends Component {
         .fetchArticles(this.props.topic, this.state.sortBy, this.state.order)
         .then(articles => {
           this.setState({ articles, isFiltered: true });
-        })
-        .catch(err => {
-          console.log(err);
         });
     }
   }

@@ -1,7 +1,27 @@
-#footer {
-  grid-area: 'Footer';
+footer {
   box-shadow: 0 4px 20px 0px gray;
   background-color: var(--lightgrey);
   z-index: 10;
   align-self: end;
+  transition: 0.6s;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer h4 {
+  margin: 10px;
+}
+
+footer:hover {
+  height: 175px;
+}
+
+.accent-color {
+  color: var(--accent-color);
+}
+
+#footer-header {
+  display: flex;
+  align-items: center;
 }

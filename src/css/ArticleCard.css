@@ -53,6 +53,11 @@
   width: 25px;
   margin: 15px;
 }
+
+.card-footer input:hover {
+  filter: invert(20%) sepia(78%) saturate(2056%) hue-rotate(332deg)
+    brightness(97%) contrast(105%);
+}
 .card-footer button {
   margin: 12px;
 }
