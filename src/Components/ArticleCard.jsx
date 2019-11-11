@@ -46,6 +46,9 @@ class ArticleCard extends Component {
               votes={this.props.article.votes}
             />
           )}
+          {this.props.username === this.props.article.author && (
+            <p>Votes: {this.props.article.votes}</p>
+          )}
           <input type="image" src={Comments} onClick={this.toggleOpen} alt="" />
           <p> {this.props.article.comment_count}</p>
           <Link

@@ -35,11 +35,16 @@ class SingleArticle extends Component {
             <div className="article-body">{this.state.article.body}</div>
             <div className="article-footer">
               <div className="single-article-voter">
-                <Voter
-                  id={this.state.article.article_id}
-                  endpoint="articles"
-                  votes={this.state.article.votes}
-                />
+                {this.props.username !== this.state.article.author && (
+                  <Voter
+                    id={this.state.article.article_id}
+                    endpoint="articles"
+                    votes={this.state.article.votes}
+                  />
+                )}
+                {this.props.username === this.state.article.author && (
+                  <p>Votes: {this.state.article.votes}</p>
+                )}
               </div>
 
               <div className="single-article-comment-count">
